@@ -1,0 +1,31 @@
+# To execute this docker-compose yml file use `docker-compose -f docker-compose.yml up`
+# Add the `-d` flag at the end for detached execution
+# To stop the execution, hit Ctrl+C, and then `docker-compose -f docker-compose.yml down`
+version: "3"
+services:
+ 
+  web:
+    image: public.ecr.aws/w0f5g4k6/javaweb
+    ports:
+      - 8080
+  # chrome_1_mham_project1:
+  #   image: selenium/node-chrome:4.18.1-20240224
+  #   shm_size: 2gb
+  #   depends_on:
+  #     - selenium_hub_mham_project1
+  #   environment:
+  #     - SE_EVENT_BUS_HOST=selenium_hub_mham_project1
+  #     - SE_EVENT_BUS_PUBLISH_PORT=4442
+  #     - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+  #     - SE_NODE_OVERRIDE_MAX_SESSIONS=true
+  #     - SE_NODE_MAX_SESSIONS=20
+  
+
+  
+  # selenium_hub_mham_project1:
+  #   image: selenium/hub:4.18.1-20240224
+  #   container_name: selenium-hub-mham-project1
+  #   ports:
+  #     - "4462:4442"
+  #     - "4463:4443"
+  #     - "4464:4444"
